@@ -21,6 +21,10 @@ Ext.define('AM.view.user.Form', {
         xtype: 'textfield',
         name : 'email',
         fieldLabel: 'Email'
+      }, {
+        xtype: 'hidden',
+        name : 'id',
+        fieldLabel: 'id'
       }]
     }];
 

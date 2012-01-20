@@ -38,12 +38,15 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.xml
   def create
-    @user = User.new(params[:user])
+    @user = User.new(:last_name=>params[:last_name], 
+    	:first_name=>params[:first_name],
+    	:email=>params[:email]
+    )
 
     respond_to do |format|
       if @user.save
         format.html { redirect_to(@user, :notice => 'User was successfully created.') }
-        format.json { render :json => { :success => true, :users => [@user] } }
+        format.json { render :json => { :success => true, :users => [@user], :id=>@user.id } }
       else
         format.html { render :action => "new" }
       end
@@ -56,7 +59,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     respond_to do |format|
-      if @user.update_attributes(params[:user])
+      if @user.update_attributes(:last_name => params[:last_name],
+      		:email=>params[:email], :first_name=>params[:email])
         format.html { redirect_to(@user, :notice => 'User was successfully updated.') }
         format.json { render :json => { :success => true, :users => [@user] } }
       else
