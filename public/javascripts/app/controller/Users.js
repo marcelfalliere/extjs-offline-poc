@@ -1,7 +1,7 @@
 Ext.define('AM.controller.Users', {
   extend: 'Ext.app.Controller',
 
-  stores: ['Users'],
+  stores: ['OfflineUsers','Users'],
   models: ['User'],
 
   views: [
