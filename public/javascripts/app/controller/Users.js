@@ -57,13 +57,6 @@ Ext.define('AM.controller.Users', {
     if (record) { // perform update
       var r = Ext.create('AM.model.User', values);
 	  
-	  console.log("values:>");
-	  console.log(values);
-	  console.log("r:>");
-	  console.log(r);
-	  console.log("record:>");
-	  console.log(record);
-	  
       var errors = r.validate();
       if (errors.isValid()) {
       	
