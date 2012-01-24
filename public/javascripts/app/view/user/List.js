@@ -28,8 +28,14 @@ Ext.define('AM.view.user.List' ,{
       action: 'deleteUser',
       disabled: true
     });
-
-    this.bbar = [this.addUserButton, this.editUserButton, this.deleteUserButton];
+	 
+    this.bbar = [this.addUserButton, 
+		this.editUserButton, 
+		this.deleteUserButton, 
+		{ 
+			text:"Checking connection...",
+			id: "connectionStatus"
+		}];
 
     this.callParent(arguments);
   },

@@ -8,49 +8,40 @@ Ext.define('AM.store.Users', {
 
   isOnline : function() {
 	//return navigator.onLine;
-	return true;
+	return isOnline;
   },
   
   listeners: {
     load: function() {
       console.log("---- load() event on main store ---");
       
-		var offlineUsers = Ext.data.StoreManager.getByKey('OfflineUsers');
-		var users = Ext.data.StoreManager.getByKey('Users');
+		if(this.isOnline()) {
 		
-		console.log(users);
+			jsonUsers = { data: [] };
+			this.each(function(record) {
+				jsonUsers.data.push(record.data);
+			});
+			localStorage.setItem('users', JSON.stringify(jsonUsers));
+			
+		} else {
 		
-		// Clear proxy from offline store
-		offlineUsers.proxy.clear();
-
-		// Loop through records and fill the offline store
-		this.each(function(record) {
-			console.log("Adding user "+record.data.first_name+" to offline store");
-			offlineUsers.add(record.data);
-
-		});
-
-		// Sync the offline store
-		offlineUsers.sync();
-
-		// Remove data from online store
-		users.removeAll();
+			this.removeAll();
+			jsonUsers = JSON.parse(localStorage.getItem('users'));
+			for (i=0;i<jsonUsers.data.length;i++) {
+				record = jsonUsers.data[i];
+				this.add(record);
+			}
+		}
 		
       console.log("---- EO load() event on main store ---");
     },
     update: function(usersStore, record) {
       console.log("---- update() event on main store ---");
       
-      var offlineUsers = Ext.data.StoreManager.getByKey('OfflineUsers');
-		var possibleRecord = offlineUsers.findRecord("id", record.data.id);
-		if (possibleRecord) {
-			// perform offline store update
-			possibleRecord.set(record.data);
-			offlineUsers.sync();
+      if(this.isOnline()) {
+			
 		} else {
-			// perform create
-			offlineUsers.add(record.data);
-			offlineUsers.sync();
+		
 		}
 		
       console.log("---- EO update() event on main store ---");
@@ -59,6 +50,11 @@ Ext.define('AM.store.Users', {
       
       console.log("---- beforesync() event on main store ---");
       
+		if(this.isOnline()) {
+			
+		} else {
+			return false;
+		}
 		
       console.log("---- EO beforesync() event on main store ---");
     }
