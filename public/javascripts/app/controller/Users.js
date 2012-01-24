@@ -51,6 +51,7 @@ Ext.define('AM.controller.Users', {
     var form = win.down('form');
 
     var store = this.getUsersStore();
+    //var store = this.getOfflineUsersStore();
     var record = form.getRecord();
     var values = form.getValues();
 
@@ -83,6 +84,7 @@ Ext.define('AM.controller.Users', {
 
     if (record) {
       var store = this.getUsersStore();
+      //var store = this.getOfflineUsersStore();
       store.remove(record);
       store.sync();
     }

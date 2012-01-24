@@ -49,6 +49,7 @@ class UsersController < ApplicationController
         format.json { render :json => { :success => true, :users => [@user], :id=>@user.id } }
       else
         format.html { render :action => "new" }
+        format.json { render :json => { :success => false} }
       end
     end
   end
@@ -56,15 +57,29 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.xml
   def update
-    @user = User.find(params[:id])
+    @user = User.find_by_id(params[:id])
 
     respond_to do |format|
-      if @user.update_attributes(:last_name => params[:last_name],
+      if !@user
+        @user = User.new(:last_name=>params[:last_name], 
+    		:first_name=>params[:first_name],
+    		:email=>params[:email]
+    	)
+    	if @user.save
+          format.html { redirect_to(@user, :notice => 'User was successfully created.') }
+          format.json { render :json => { :success => true, :users => [@user], :id=>@user.id } }
+        else
+          format.html { render :action => "new" }
+          format.json { render :json => { :success => false} }
+        end
+    	
+      elsif @user.update_attributes(:last_name => params[:last_name],
       		:email=>params[:email], :first_name=>params[:email])
         format.html { redirect_to(@user, :notice => 'User was successfully updated.') }
         format.json { render :json => { :success => true, :users => [@user] } }
       else
         format.html { render :action => "edit" }
+        format.json { render :json => { :success => false} }
       end
     end
   end
