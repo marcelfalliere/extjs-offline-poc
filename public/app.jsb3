@@ -10,10 +10,6 @@
             },
             "files": [
                 {
-                    "path": "javascripts/ext-4.0/src/data/",
-                    "name": "Association.js"
-                },
-                {
                     "path": "javascripts/ext-4.0/src/util/",
                     "name": "Observable.js"
                 },
@@ -26,12 +22,16 @@
                     "name": "validations.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/util/",
-                    "name": "HashMap.js"
+                    "path": "javascripts/ext-4.0/src/data/",
+                    "name": "Association.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/data/",
                     "name": "SortTypes.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/util/",
+                    "name": "HashMap.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/data/",
@@ -62,28 +62,32 @@
                     "name": "CubicBezier.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/panel/",
-                    "name": "Proxy.js"
+                    "path": "javascripts/ext-4.0/src/",
+                    "name": "Template.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/fx/",
                     "name": "Queue.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/dd/",
-                    "name": "StatusProxy.js"
+                    "path": "javascripts/ext-4.0/src/panel/",
+                    "name": "Proxy.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/",
-                    "name": "Template.js"
+                    "path": "javascripts/ext-4.0/src/layout/",
+                    "name": "Layout.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/draw/",
+                    "name": "Color.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/fx/target/",
                     "name": "Target.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/draw/",
-                    "name": "Color.js"
+                    "path": "javascripts/ext-4.0/src/dd/",
+                    "name": "StatusProxy.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/",
@@ -98,10 +102,6 @@
                     "name": "ComponentQuery.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/layout/",
-                    "name": "Layout.js"
-                },
-                {
                     "path": "javascripts/ext-4.0/src/util/",
                     "name": "Floating.js"
                 },
@@ -114,28 +114,28 @@
                     "name": "None.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/layout/container/",
-                    "name": "AbstractContainer.js"
-                },
-                {
                     "path": "javascripts/ext-4.0/src/util/",
                     "name": "Animate.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/util/",
-                    "name": "ClickRepeater.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/util/",
-                    "name": "TextMetrics.js"
+                    "path": "javascripts/ext-4.0/src/layout/container/",
+                    "name": "AbstractContainer.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/",
                     "name": "ElementLoader.js"
                 },
                 {
+                    "path": "javascripts/ext-4.0/src/util/",
+                    "name": "ClickRepeater.js"
+                },
+                {
                     "path": "javascripts/ext-4.0/src/state/",
                     "name": "Provider.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/util/",
+                    "name": "TextMetrics.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/app/",
@@ -226,50 +226,6 @@
                     "name": "XTemplate.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/fx/target/",
-                    "name": "Element.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/fx/target/",
-                    "name": "Sprite.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/fx/target/",
-                    "name": "CompositeElement.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/fx/target/",
-                    "name": "CompositeSprite.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/fx/target/",
-                    "name": "Component.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/fx/",
-                    "name": "Manager.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/fx/",
-                    "name": "Animator.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/draw/",
-                    "name": "Draw.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/fx/",
-                    "name": "PropertyHandler.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/fx/",
-                    "name": "Anim.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/",
-                    "name": "FocusManager.js"
-                },
-                {
                     "path": "javascripts/ext-4.0/src/layout/component/",
                     "name": "Component.js"
                 },
@@ -286,6 +242,50 @@
                     "name": "Tip.js"
                 },
                 {
+                    "path": "javascripts/ext-4.0/src/draw/",
+                    "name": "Draw.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/fx/",
+                    "name": "PropertyHandler.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/fx/target/",
+                    "name": "Element.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/fx/target/",
+                    "name": "CompositeElement.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/fx/target/",
+                    "name": "Sprite.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/fx/target/",
+                    "name": "Component.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/fx/target/",
+                    "name": "CompositeSprite.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/fx/",
+                    "name": "Manager.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/fx/",
+                    "name": "Animator.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/fx/",
+                    "name": "Anim.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/",
+                    "name": "FocusManager.js"
+                },
+                {
                     "path": "javascripts/ext-4.0/src/util/",
                     "name": "Region.js"
                 },
@@ -300,6 +300,10 @@
                 {
                     "path": "javascripts/ext-4.0/src/layout/container/",
                     "name": "Auto.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/layout/container/boxOverflow/",
+                    "name": "Scroller.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/dd/",
@@ -322,10 +326,6 @@
                     "name": "DD.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/layout/container/boxOverflow/",
-                    "name": "Scroller.js"
-                },
-                {
                     "path": "javascripts/ext-4.0/src/",
                     "name": "LoadMask.js"
                 },
@@ -340,14 +340,6 @@
                 {
                     "path": "javascripts/ext-4.0/src/layout/component/",
                     "name": "Auto.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/menu/",
-                    "name": "Manager.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/layout/component/",
-                    "name": "Button.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/state/",
@@ -382,16 +374,24 @@
                     "name": "Header.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/button/",
-                    "name": "Button.js"
-                },
-                {
                     "path": "javascripts/ext-4.0/src/toolbar/",
                     "name": "Item.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/toolbar/",
                     "name": "Separator.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/menu/",
+                    "name": "Manager.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/layout/component/",
+                    "name": "Button.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/button/",
+                    "name": "Button.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/layout/container/boxOverflow/",
@@ -446,16 +446,16 @@
                     "name": "Request.js"
                 },
                 {
+                    "path": "javascripts/ext-4.0/src/util/",
+                    "name": "Point.js"
+                },
+                {
                     "path": "javascripts/ext-4.0/src/",
                     "name": "Layer.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/data/",
                     "name": "Batch.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/util/",
-                    "name": "Point.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/resizer/",
@@ -470,6 +470,14 @@
                     "name": "CSS.js"
                 },
                 {
+                    "path": "javascripts/ext-4.0/src/layout/component/",
+                    "name": "Draw.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/dd/",
+                    "name": "DragTracker.js"
+                },
+                {
                     "path": "javascripts/ext-4.0/src/menu/",
                     "name": "KeyNav.js"
                 },
@@ -478,28 +486,20 @@
                     "name": "Item.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/dd/",
-                    "name": "DragTracker.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/util/",
-                    "name": "Grouper.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/layout/component/",
-                    "name": "Draw.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/layout/container/",
-                    "name": "AbstractFit.js"
+                    "path": "javascripts/ext-4.0/src/draw/",
+                    "name": "CompositeSprite.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/data/",
                     "name": "AbstractStore.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/draw/",
-                    "name": "CompositeSprite.js"
+                    "path": "javascripts/ext-4.0/src/util/",
+                    "name": "Grouper.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/layout/container/",
+                    "name": "AbstractFit.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/util/",
@@ -510,12 +510,12 @@
                     "name": "Window.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/layout/container/",
-                    "name": "Fit.js"
+                    "path": "javascripts/ext-4.0/src/draw/",
+                    "name": "Surface.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/menu/",
-                    "name": "CheckItem.js"
+                    "path": "javascripts/ext-4.0/src/draw/",
+                    "name": "Component.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/data/",
@@ -527,6 +527,14 @@
                 },
                 {
                     "path": "javascripts/ext-4.0/src/menu/",
+                    "name": "CheckItem.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/layout/container/",
+                    "name": "Fit.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/menu/",
                     "name": "Separator.js"
                 },
                 {
@@ -534,28 +542,20 @@
                     "name": "Menu.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/draw/",
-                    "name": "Surface.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/draw/",
-                    "name": "Component.js"
+                    "path": "javascripts/ext-4.0/src/resizer/",
+                    "name": "ResizeTracker.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/data/reader/",
                     "name": "Array.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/resizer/",
-                    "name": "ResizeTracker.js"
+                    "path": "javascripts/ext-4.0/src/data/proxy/",
+                    "name": "Client.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/draw/",
                     "name": "Matrix.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/data/proxy/",
-                    "name": "Client.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/",
@@ -594,6 +594,14 @@
                     "name": "Viewport.js"
                 },
                 {
+                    "path": "javascripts/app/model/",
+                    "name": "User.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/data/proxy/",
+                    "name": "WebStorage.js"
+                },
+                {
                     "path": "javascripts/app/view/user/",
                     "name": "Form.js"
                 },
@@ -602,24 +610,12 @@
                     "name": "OfflineUsers.js"
                 },
                 {
-                    "path": "javascripts/app/model/",
-                    "name": "User.js"
-                },
-                {
                     "path": "javascripts/app/store/",
                     "name": "Users.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/data/proxy/",
-                    "name": "WebStorage.js"
-                },
-                {
                     "path": "javascripts/ext-4.0/src/form/",
                     "name": "FieldAncestor.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/panel/",
-                    "name": "Table.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/form/",
@@ -634,24 +630,16 @@
                     "name": "Field.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/form/action/",
-                    "name": "Action.js"
-                },
-                {
                     "path": "javascripts/ext-4.0/src/layout/container/",
                     "name": "Anchor.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/selection/",
-                    "name": "Model.js"
+                    "path": "javascripts/ext-4.0/src/form/action/",
+                    "name": "Action.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/layout/component/",
-                    "name": "ProgressBar.js"
-                },
-                {
-                    "path": "javascripts/ext-4.0/src/layout/component/field/",
-                    "name": "Text.js"
+                    "path": "javascripts/ext-4.0/src/panel/",
+                    "name": "Table.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/form/field/",
@@ -659,7 +647,15 @@
                 },
                 {
                     "path": "javascripts/ext-4.0/src/layout/component/field/",
-                    "name": "TextArea.js"
+                    "name": "Text.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/layout/component/",
+                    "name": "ProgressBar.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/selection/",
+                    "name": "Model.js"
                 },
                 {
                     "path": "javascripts/app/view/",
@@ -679,19 +675,23 @@
                 },
                 {
                     "path": "javascripts/ext-4.0/src/form/action/",
-                    "name": "Load.js"
+                    "name": "Submit.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/form/action/",
-                    "name": "Submit.js"
+                    "name": "Load.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/form/field/",
+                    "name": "Text.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/",
                     "name": "ProgressBar.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/form/field/",
-                    "name": "Text.js"
+                    "path": "javascripts/ext-4.0/src/layout/component/field/",
+                    "name": "TextArea.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/form/field/",
@@ -742,20 +742,20 @@
                     "name": "Users.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/grid/",
-                    "name": "Scroller.js"
-                },
-                {
                     "path": "javascripts/ext-4.0/src/grid/header/",
                     "name": "Container.js"
+                },
+                {
+                    "path": "javascripts/ext-4.0/src/selection/",
+                    "name": "RowModel.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/view/",
                     "name": "TableChunker.js"
                 },
                 {
-                    "path": "javascripts/ext-4.0/src/selection/",
-                    "name": "RowModel.js"
+                    "path": "javascripts/ext-4.0/src/grid/",
+                    "name": "Scroller.js"
                 },
                 {
                     "path": "javascripts/ext-4.0/src/grid/",
