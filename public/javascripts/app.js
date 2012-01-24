@@ -7,7 +7,9 @@ Ext.application({ // create a new instance of Application class
   
   requires: [
 	'Ext.data.proxy.LocalStorage',
-	'Ext.data.proxy.Rest'
+	'Ext.data.proxy.Rest',
+	'Ext.form.Panel',
+	'Ext.form.field.Hidden'
   ]
 });
 
