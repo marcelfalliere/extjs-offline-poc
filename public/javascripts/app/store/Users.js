@@ -6,17 +6,34 @@ Ext.define('AM.store.Users', {
   autoLoad: true,
   autoSync: false,
 
+  isOnline : function() {
+	return false;
+  },
+  
   listeners: {
     load: function() {
       console.log("---- load() event on main store ---");
       
-		// chargement des utilisateurs dans le storage local
-      var offlineUsers = Ext.data.StoreManager.getByKey('OfflineUsers');
+		var offlineUsers = Ext.data.StoreManager.getByKey('OfflineUsers');
 		offlineUsers.load();
-		this.each(function(record){
-      	offlineUsers.add(record.data);
-      });	
-      offlineUsers.sync();
+      
+		if (this.isOnline()==false) { // chargement du storage local dans le store actuel
+			
+			this.removeAll();
+			offlineUsers.each(function(record) {
+				this.add(record.data);
+			}, this);
+			this.sync();
+			
+		} else { // chargement des utilisateurs dans le storage local			
+			this.each(function(record){
+				offlineUsers.add(record.data);
+			});	
+			offlineUsers.sync();
+		}
+		
+		
+		
       
       console.log("---- EO load() event on main store ---");
     },
@@ -41,7 +58,6 @@ Ext.define('AM.store.Users', {
       
       console.log("---- beforesync() event on main store ---");
       
-		return false;
 		
       console.log("---- EO beforesync() event on main store ---");
     }

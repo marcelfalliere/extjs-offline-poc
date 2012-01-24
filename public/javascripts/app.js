@@ -3,6 +3,11 @@ Ext.application({ // create a new instance of Application class
 
   appFolder: 'javascripts/app',
 
-  controllers: ['Users']
+  controllers: ['Users'],
+  
+  requires: [
+	'Ext.data.proxy.LocalStorage',
+	'Ext.data.proxy.Rest'
+  ]
 });
 

@@ -1,4 +1,6 @@
 Extjs4AccountManager::Application.routes.draw do
+  get "manifest/show"
+
   resources :users
   
 
