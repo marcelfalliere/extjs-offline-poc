@@ -9,8 +9,9 @@ Ext.define('AM.store.OfflineUsers', {
         type: 'localstorage',
         id: "offlineUsersProxy"
     },
+	 
     
-listeners: {
+	listeners: {
     load: function() {
       console.log("---- load() event on OFFLINE store ---");
       console.log("---- EO load() event on OFFLINE store ---");

@@ -7,7 +7,8 @@ Ext.define('AM.store.Users', {
   autoSync: false,
 
   isOnline : function() {
-	return false;
+	//return navigator.onLine;
+	return true;
   },
   
   listeners: {
@@ -15,26 +16,26 @@ Ext.define('AM.store.Users', {
       console.log("---- load() event on main store ---");
       
 		var offlineUsers = Ext.data.StoreManager.getByKey('OfflineUsers');
-		offlineUsers.load();
-      
-		if (this.isOnline()==false) { // chargement du storage local dans le store actuel
-			
-			this.removeAll();
-			offlineUsers.each(function(record) {
-				this.add(record.data);
-			}, this);
-			this.sync();
-			
-		} else { // chargement des utilisateurs dans le storage local			
-			this.each(function(record){
-				offlineUsers.add(record.data);
-			});	
-			offlineUsers.sync();
-		}
+		var users = Ext.data.StoreManager.getByKey('Users');
 		
+		console.log(users);
 		
+		// Clear proxy from offline store
+		offlineUsers.proxy.clear();
+
+		// Loop through records and fill the offline store
+		this.each(function(record) {
+			console.log("Adding user "+record.data.first_name+" to offline store");
+			offlineUsers.add(record.data);
+
+		});
+
+		// Sync the offline store
+		offlineUsers.sync();
+
+		// Remove data from online store
+		users.removeAll();
 		
-      
       console.log("---- EO load() event on main store ---");
     },
     update: function(usersStore, record) {
