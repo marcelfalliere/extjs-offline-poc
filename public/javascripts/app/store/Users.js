@@ -10,40 +10,39 @@ Ext.define('AM.store.Users', {
     load: function() {
       console.log("---- load() event on main store ---");
       
+		// chargement des utilisateurs dans le storage local
       var offlineUsers = Ext.data.StoreManager.getByKey('OfflineUsers');
-      var users = Ext.data.StoreManager.getByKey('Users');
-      
-      users.each(function(record){
-      	console.log("utilisateurs dans le store users:"+record.data.first_name);
+		offlineUsers.load();
+		this.each(function(record){
+      	offlineUsers.add(record.data);
       });	
-      
-      offlineUsers.load();
-      offlineUsers.each(function(record){
-      	console.log("recherche du l'utilisateur avec l'id => "+record.data.id+" dans le store du"+
-      		" serveur side =>"+users.getById(record.data.id));
-      	console.log(users.getById(record.data.id));
-      	if(null==users.getById(record.data.id)) {
-      		users.add(record.data);
-      		console.log("ajout au store des utilisateurs distants");
-      	}
-      });
-      this.sync();
-      offlineUsers.removeAll();
-      
-      users.sync();
+      offlineUsers.sync();
       
       console.log("---- EO load() event on main store ---");
     },
-    update: function() {
-      
+    update: function(usersStore, record) {
       console.log("---- update() event on main store ---");
-      console.log(arguments);
+      
+      var offlineUsers = Ext.data.StoreManager.getByKey('OfflineUsers');
+		var possibleRecord = offlineUsers.findRecord("id", record.data.id);
+		if (possibleRecord) {
+			// perform offline store update
+			possibleRecord.set(record.data);
+			offlineUsers.sync();
+		} else {
+			// perform create
+			offlineUsers.add(record.data);
+			offlineUsers.sync();
+		}
+		
       console.log("---- EO update() event on main store ---");
     },
-    beforesync: function() {
+    beforesync: function(options) {
       
       console.log("---- beforesync() event on main store ---");
-      console.log(arguments);
+      
+		return false;
+		
       console.log("---- EO beforesync() event on main store ---");
     }
   },

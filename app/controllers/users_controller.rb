@@ -74,7 +74,7 @@ class UsersController < ApplicationController
         end
     	
       elsif @user.update_attributes(:last_name => params[:last_name],
-      		:email=>params[:email], :first_name=>params[:email])
+      		:email=>params[:email], :first_name=>params[:first_name])
         format.html { redirect_to(@user, :notice => 'User was successfully updated.') }
         format.json { render :json => { :success => true, :users => [@user] } }
       else
