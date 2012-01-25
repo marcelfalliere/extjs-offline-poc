@@ -18,6 +18,11 @@ webkit based browsers. The xhr /users.json is canceled (check console when runni
 a goood content_type, `/application/json` and the requests itself works with `index-debug.html` and in a new tab
 of the navigator.
 
+2. The use of `navigator.onLine`. Even if the server is reachable, deconnecting from your wifi/network will cause
+it to return `false`.
+
+3. ...
+
 Installation
 ------------
 
