@@ -13,15 +13,10 @@ vanilla javascript and with the use of persist.js.
 Limitations and known errors
 ----------------------------
 
-1. The deployment process of sencha, that makes `all-classes.js` and `app-all.js`, seems to cause a problem on
-webkit based browsers. The xhr /users.json is canceled (check console when running index.html), even if there's 
-a goood content_type, `/application/json` and the requests itself works with `index-debug.html` and in a new tab
-of the navigator.
-
-2. The use of `navigator.onLine`. Even if the server is reachable, deconnecting from your wifi/network will cause
+1. The use of `navigator.onLine`. Even if the server is reachable, deconnecting from your wifi/network will cause
 it to return `false`.
 
-3. ...
+2. ...
 
 Installation
 ------------

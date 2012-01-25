@@ -29,11 +29,11 @@ function update_connection_status() {
 		text=connectionStatus.getElementsByClassName("x-btn-inner")[0];
 		if(text) {
 			if (isOnline) {
-				text.innerHTML = "Online !"
+				text.innerHTML = "Synchronisation des données avec le serveur !"
 				removeClass(text, "offline");
 				addClass(text, "online");
 			} else {
-				text.innerHTML = "Offline =("
+				text.innerHTML = "Connection perdue."
 				removeClass(text, "online");
 				addClass(text, "offline");
 			}
