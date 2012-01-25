@@ -67,6 +67,7 @@ Ext.define('AM.store.Users', {
 			}
 			this.eraseSync();
 			
+			return false;
 		}
 		
       console.log("---- EO load() event on main store ---");

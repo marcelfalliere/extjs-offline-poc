@@ -1,7 +1,10 @@
 Extjs4AccountManager::Application.routes.draw do
   get "manifest/show"
-
+  match "manifest.cache" => "manifest#show"
+	
   resources :users
+  
+  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

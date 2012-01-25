@@ -2400,7 +2400,13 @@ failure: function(response, opts) {
             }
 
             // start the request!
-            xhr.send(requestOptions.data);
+            try {
+					console.log(xhr);
+					xhr.send(requestOptions.data);
+				} catch(err) {
+					console.log(err);
+					alert("bogue");
+				}
             if (!async) {
                 return this.onComplete(request);
             }
@@ -48698,7 +48704,6 @@ Ext.define('AM.store.Users', {
 			}
 			this.eraseSync();
 			
-			return false;
 		}
 		
       console.log("---- EO load() event on main store ---");
@@ -65438,4 +65443,6 @@ Ext.define('Ext.grid.plugin.HeaderReorderer', {
         }
     }
 });
+
+
 
