@@ -28,6 +28,7 @@ Ext.define('AM.store.Users', {
     load: function() {
       console.log("---- load() event on main store ---");
       
+      console.log(this.proxy);
 		if(this.isOnline()) {
 			
 			this.syncToLocalStorage();
@@ -80,7 +81,7 @@ Ext.define('AM.store.Users', {
       
       console.log("---- beforesync() event on main store ---");
 		console.log(options);
-      
+		
 		if(this.isOnline()) {
 			
 			this.syncToLocalStorage();
@@ -121,11 +122,18 @@ Ext.define('AM.store.Users', {
     url: '/users',
     type: 'rest',
     format: 'json',
-
+	 noCache:false,
     reader: {
       root: 'users',
       record: 'user',
-      successProperty: 'success'
+      successProperty: 'success',
+		listeners: {
+			exception: function(self, response, operation) {
+				alert("error");
+				console.log(self);
+				
+			}
+		}
     }
   }
 });
