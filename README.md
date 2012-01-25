@@ -13,10 +13,13 @@ vanilla javascript and with the use of persist.js.
 Limitations and known errors
 ----------------------------
 
-1. The use of `navigator.onLine`. Even if the server is reachable, deconnecting from your wifi/network will cause
+1. The rails server in development mode will make requests from iPad or any mobile device too slow, causing 
+xhr to be badly handled by the server.
+
+2. The use of `navigator.onLine`. Even if the server is reachable, deconnecting from your wifi/network will cause
 it to return `false`.
 
-2. ...
+3. ...
 
 Installation
 ------------
