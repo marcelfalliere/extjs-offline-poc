@@ -21,6 +21,11 @@
 			window.setInterval(function() {
 				if (isOnline != navigator.onLine) {
 					isOnline = navigator.onLine;
+					if(isOnline) {
+						var usersStore = Ext.data.StoreManager.getByKey('Users');
+						usersStore.sync();
+						
+					}
 				}
 				update_connection_status();
 			}, 1000);

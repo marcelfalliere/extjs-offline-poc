@@ -1,7 +1,7 @@
 Ext.define('AM.controller.Users', {
   extend: 'Ext.app.Controller',
 
-  stores: ['OfflineUsers','Users'],
+  stores: ['Users'],
   models: ['User'],
 
   views: [
@@ -17,7 +17,6 @@ Ext.define('AM.controller.Users', {
   init: function() {
     this.control({
       'userlist': {
-        itemdblclick: this.editUser,
         selectionchange: this.selectionChange
       },
       'userform button[action=save]': {
@@ -25,9 +24,6 @@ Ext.define('AM.controller.Users', {
       },
       'button[action=addUser]': {
         click: this.addUser
-      },
-      'button[action=editUser]': {
-        click: this.editUser
       },
       'button[action=deleteUser]': {
         click: this.deleteUser
@@ -40,12 +36,6 @@ Ext.define('AM.controller.Users', {
     view.show();
   },
 
-  editUser: function() {
-    var record = this.getList().getSelectedUser();
-    var view = Ext.widget('userform');
-    view.down('form').loadRecord(record);
-  },
-
   updateUser: function(button) {
     var win = button.up('window');
     var form = win.down('form');
@@ -55,24 +45,10 @@ Ext.define('AM.controller.Users', {
     var record = form.getRecord();
     var values = form.getValues();
 
-    if (record) { // perform update
-      var r = Ext.create('AM.model.User', values);
-	  
-      var errors = r.validate();
-      if (errors.isValid()) {
-      	
-        record.set(values);
-
-        store.sync();
-        win.close();
-      } else {
-      	alert("invalid");
-        console.log(errors);
-        form.getForm().markInvalid(errors);
-      }
+    if (record) { 
+		// should be an update... ;>
     } else { // perform create
       store.add(values);
-
       store.sync();
       win.close();
     }
@@ -84,8 +60,8 @@ Ext.define('AM.controller.Users', {
 
     if (record) {
       var store = this.getUsersStore();
-      //var store = this.getOfflineUsersStore();
       store.remove(record);
+		
       store.sync();
     }
 

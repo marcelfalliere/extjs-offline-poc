@@ -17,12 +17,6 @@ Ext.define('AM.view.user.List' ,{
       action: 'addUser'
     });
 
-    this.editUserButton = new Ext.Button({
-      text: 'Edit user',
-      action: 'editUser',
-      disabled: true
-    });
-
     this.deleteUserButton = new Ext.Button({
       text: 'Delete User',
       action: 'deleteUser',
@@ -30,7 +24,6 @@ Ext.define('AM.view.user.List' ,{
     });
 	 
     this.bbar = [this.addUserButton, 
-		this.editUserButton, 
 		this.deleteUserButton, 
 		{ 
 			text:"Checking connection...",
@@ -45,12 +38,12 @@ Ext.define('AM.view.user.List' ,{
   },
 
   enableRecordRelatedButtons: function() {
-    this.editUserButton.enable();
-    this.deleteUserButton.enable();
+	 if(this.getSelectedUser().data.id!=0) {
+		this.deleteUserButton.enable();
+	}
   },
 
   disableRecordRelatedButtons: function() {
-    this.editUserButton.disable();
     this.deleteUserButton.disable();
   }
 });
