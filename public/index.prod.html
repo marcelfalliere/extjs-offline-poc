@@ -5,9 +5,16 @@
     <title>Account Manager</title>
     <link rel="stylesheet" type="text/css" href="javascripts/ext-4.0/resources/css/ext-all.css">
     
+	 <style>
+		#connectionStatus span.x-btn-inner  { color:black; }
+		#connectionStatus span.x-btn-inner.online { color:green; }
+		#connectionStatus span.x-btn-inner.offline { color:red; }
+	 </style>
+	 
+    <script type="text/javascript" src="javascripts/offlineIndicator.js"></script>
     <script type="text/javascript" src="javascripts/ext-4.0/ext.js"></script>
     <script type="text/javascript" src="all-classes.js"></script>
     <script type="text/javascript" src="javascripts/app.js"></script>
   </head>
-  <body></body>
+  <body onload="init_store();init_connection_status()"></body>
 </html>
