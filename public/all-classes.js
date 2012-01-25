@@ -2370,7 +2370,7 @@ failure: function(response, opts) {
             xhr = this.getXhrInstance();
 
             async = options.async !== false ? (options.async || me.async) : false;
-
+				
             // open the request
             if (username) {
                 xhr.open(requestOptions.method, requestOptions.url, async, username, password);
@@ -2399,7 +2399,7 @@ failure: function(response, opts) {
                 xhr.onreadystatechange = Ext.Function.bind(me.onStateChange, me, [request]);
             }
 
-            // start the request!
+            // start the request
             xhr.send(requestOptions.data);
             if (!async) {
                 return this.onComplete(request);
@@ -48662,6 +48662,10 @@ Ext.define('AM.store.Users', {
       console.log(this.proxy);
 		if(this.isOnline()) {
 			
+			console.log("online");
+			this.each(function(record) {
+				console.log("record=>"+record.data.first_name);
+			});
 			this.syncToLocalStorage();
 			this.eraseSync();
 			

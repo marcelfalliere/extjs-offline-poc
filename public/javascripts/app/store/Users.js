@@ -31,6 +31,10 @@ Ext.define('AM.store.Users', {
       console.log(this.proxy);
 		if(this.isOnline()) {
 			
+			console.log("online");
+			this.each(function(record) {
+				console.log("record=>"+record.data.first_name);
+			});
 			this.syncToLocalStorage();
 			this.eraseSync();
 			
